@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Status</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!--preloader-->
+    <div class="preloader">
+        <div class="preloader__body">
+                <div class="preloader__body--circle">
+                </div>
+        </div>
+    </div>
+    <!--end preloader-->
+    <div class="container">
+        <div class="weather">
+            <div class="weather__status">
+                <div class="weather__status__cityDetail">
+                    <span><img class="weather__status__cityDetail--icon" src="./assets/icons/map.png" alt="map icon"
+                            srcset=""></span>
+                    <span id="cityName" class="weather__status__cityDetail--cityName">London</span>
+                </div>
+                <span id="lastUpdate" class="weather__status__lastUpdate">12 min ago</span>
+            </div>
+            <div class="weather__detail">
+                <div class="weather__detail--Icon">
+                    <img id="weatherIcon" src="./assets/icons/partly-cloudy.png" alt="weatherIcon">
+                </div>
+                <div>
+                    <div class="weather__detail--status">
+                        <p id="weatherStatusTitle">Partly Cloudy</p>
+                    </div>
+                    <div class="weather__detail--temperature">
+                        <h1><span id="weatherStatusTemperature">20</span><span>º</span></h1>
+                    </div>
+                    <div class="weather__detail--wind">
+                        <span><img src="./assets/icons/wind.png" alt="map icon" srcset=""></span>
+                        <span><span id="weatherStatusWind"></span> km/h</span>
+                    </div>
+                </div>
+                <div>
+                    <input id="cityNameInput" class="weather__detail--inpCity" type="text" name="" id=""
+                        placeholder="City Name">
+                    <button id="findCityButton" class="weather__detail--btnFind" type="submit">Find City</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

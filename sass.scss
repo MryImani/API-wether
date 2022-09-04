@@ -1,0 +1,243 @@
+@import "./_variable";
+
+@font-face {
+    font-family: "Roboto-Bold";
+    font-weight: 700;
+    src: url(./assets/fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    font-weight: 600;
+    src: url(./assets/fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    font-weight: 400;
+    src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+
+@keyframes loader {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes iconAnimate {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+body {
+    * {
+        box-sizing: border-box;
+    }
+
+    background-image:$bgBody;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //preloader
+
+    .preloader {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 1s;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-image: $bgPreloader;
+        transition: .3s all ease;
+
+        &__body {
+            text-align: center;
+            width: 350px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 0;
+
+            &--circle {
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 9px solid;
+                border-color: #dbdcef;
+                border-right-color: #506350;
+                animation: loader 1s infinite linear;
+
+
+
+            }
+
+        }
+
+    
+
+    }
+
+    .preloader.invisible {
+        opacity: 0;
+        visibility: hidden;
+        transition-delay: 2s;
+    }
+
+    .container {
+        width: 20%;
+        @media screen and (max-width: 1200px) {
+            width: 40%;
+        }
+        @media screen and (max-width: 800px) {
+            width: 60%;
+        }
+
+        @media screen and (max-width: 450px) {
+            width: 100%;
+        }
+    }
+
+    .weather {
+        &__status {
+            width: 86%;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: $bgColorStatus;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+
+            img {
+                width: 20px;
+                height: 20px;
+                margin: 0px 3px;
+            }
+
+            &__cityDetail {
+                display: flex;
+
+                &--cityName {
+                    font-family: "Roboto-Bold";
+                    font-weight: 700;
+                    color: $cityNameColor ;
+                }
+            }
+
+            &__lastUpdate {
+                font-family: "Roboto-Medium";
+                font-weight: 600;
+                color: $lastUpdateColor ;
+            }
+        }
+
+        &__detail {
+            width: 86%;
+            margin: 8px auto 0;
+            height: 32rem;
+            background-color: $bgColorStatus;
+            border-radius: 10px;
+            padding: 15px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            &--Icon {
+
+                align-self: center;
+                animation: iconAnimate 1s infinite linear;
+                img {
+                    width: 7rem;
+                    margin-top: 2rem;
+                }
+            }
+
+            &--status {
+                font-family: "Roboto-Medium";
+                font-weight: 600;
+                text-align: center;
+                color: $statusTextColor;
+                font-size: 1.5rem;
+            }
+
+            &--temperature {
+                font-family: "Roboto-Bold";
+                font-weight: 700;
+                text-align: center;
+
+                h1 {
+                    font-size: 3.5rem;
+                    margin: 1rem 0;
+                }
+            }
+
+            &--wind {
+                color: $windTextColor;
+                text-align: center;
+                font-family: "Roboto-Regular";
+                font-weight: 400;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                    margin: 0px 3px;
+
+                }
+            }
+
+            &--inpCity {
+
+                width: 100%;
+                margin: 5px 0px;
+                padding: 15px;
+                border-radius: 10px;
+                border: none;
+                background: $bgColorInpCity;
+                color: $inpCityTextColor;
+                font-family: "Roboto-Regular";
+                font-weight: 400;
+
+
+            }
+
+            &--inpCity:focus {
+                outline: none;
+            }
+
+            &--btnFind {
+
+                width: 100%;
+                margin: 5px 0px;
+                padding: 15px;
+                border-radius: 10px;
+                border: none;
+                background: $bgColorButton;
+                color: $buttonTextColor;
+                font-family: "Roboto-Regular";
+                font-weight: 400;
+                cursor: pointer;
+
+
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,202 @@
+@font-face {
+  font-family: "Roboto-Bold";
+  font-weight: 700;
+  src: url(./assets/fonts/Roboto-Bold.ttf);
+}
+@font-face {
+  font-family: "Roboto-Medium";
+  font-weight: 600;
+  src: url(./assets/fonts/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  font-weight: 400;
+  src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+@keyframes loader {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes iconAnimate {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+body {
+  background-image: linear-gradient(to left top, #c2e8fb, #a2c5fd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body * {
+  box-sizing: border-box;
+}
+body .preloader {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 1s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-image: linear-gradient(to left top, #ddebdc, #c2dec5);
+  transition: 0.3s all ease;
+}
+body .preloader__body {
+  text-align: center;
+  width: 350px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+body .preloader__body--circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 9px solid;
+  border-color: #dbdcef;
+  border-right-color: #506350;
+  animation: loader 1s infinite linear;
+}
+body .preloader.invisible {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 2s;
+}
+body .container {
+  width: 20%;
+}
+@media screen and (max-width: 1200px) {
+  body .container {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 800px) {
+  body .container {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 450px) {
+  body .container {
+    width: 100%;
+  }
+}
+body .weather__status {
+  width: 86%;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+body .weather__status img {
+  width: 20px;
+  height: 20px;
+  margin: 0px 3px;
+}
+body .weather__status__cityDetail {
+  display: flex;
+}
+body .weather__status__cityDetail--cityName {
+  font-family: "Roboto-Bold";
+  font-weight: 700;
+  color: #436682;
+}
+body .weather__status__lastUpdate {
+  font-family: "Roboto-Medium";
+  font-weight: 600;
+  color: #a0adcd;
+}
+body .weather__detail {
+  width: 86%;
+  margin: 8px auto 0;
+  height: 32rem;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+body .weather__detail--Icon {
+  align-self: center;
+  animation: iconAnimate 1s infinite linear;
+}
+body .weather__detail--Icon img {
+  width: 7rem;
+  margin-top: 2rem;
+}
+body .weather__detail--status {
+  font-family: "Roboto-Medium";
+  font-weight: 600;
+  text-align: center;
+  color: #7890cc;
+  font-size: 1.5rem;
+}
+body .weather__detail--temperature {
+  font-family: "Roboto-Bold";
+  font-weight: 700;
+  text-align: center;
+}
+body .weather__detail--temperature h1 {
+  font-size: 3.5rem;
+  margin: 1rem 0;
+}
+body .weather__detail--wind {
+  color: #7a7f85;
+  text-align: center;
+  font-family: "Roboto-Regular";
+  font-weight: 400;
+}
+body .weather__detail--wind img {
+  width: 20px;
+  height: 20px;
+  margin: 0px 3px;
+}
+body .weather__detail--inpCity {
+  width: 100%;
+  margin: 5px 0px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #dce2ee;
+  color: #7a7f85;
+  font-family: "Roboto-Regular";
+  font-weight: 400;
+}
+body .weather__detail--inpCity:focus {
+  outline: none;
+}
+body .weather__detail--btnFind {
+  width: 100%;
+  margin: 5px 0px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #4165a1;
+  color: #fff;
+  font-family: "Roboto-Regular";
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
